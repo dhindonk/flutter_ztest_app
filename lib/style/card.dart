@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:ujian_app/pages/profile.dart';
+import 'package:ujian_app/models/get-data.dart';
 
 class CardCategory extends StatelessWidget {
-  const CardCategory({super.key, required this.nextDestination});
+  const CardCategory(
+      {super.key, required this.username, required this.nextDestination});
 
-  final Widget nextDestination;
+  final username;
+  final String nextDestination;
 
   @override
   Widget build(BuildContext context) {
+    NextDestination next = NextDestination();
+
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => nextDestination,
-          ),
-        );
+      onTap: () { 
+        
+        if (nextDestination == 'profile') {
+          next.getDataQuestions(username, context);
+        } else {
+          next.userLogin(username, context);
+        }
+
       },
       child: Padding(
         padding: const EdgeInsets.fromLTRB(5, 15, 5, 15),

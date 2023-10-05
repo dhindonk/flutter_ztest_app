@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ujian_app/models/get-data.dart';
 import 'package:ujian_app/models/soalModel.dart';
-import 'package:ujian_app/pages/tes_page.dart';
+import 'package:ujian_app/pages/questions.dart';
 import 'package:http/http.dart' as myHttp;
 
 class HomePage extends StatefulWidget {
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               //
               ElevatedButton(
                   onPressed: () {
-                    getAllData(usernameController.text, context);
+                    // getAllData(usernameController.text, context);
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

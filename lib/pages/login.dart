@@ -4,16 +4,16 @@ import 'package:ujian_app/style/button.dart';
 import 'package:ujian_app/style/card.dart';
 import 'package:ujian_app/style/input_text.dart';
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<LoginPage> createState() => _FirstPageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _FirstPageState extends State<LoginPage> {
   TextEditingController usernameController = TextEditingController();
-
+  NextDestination next = NextDestination();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,7 +32,6 @@ class _FirstPageState extends State<FirstPage> {
                       width: 180,
                       height: 190,
                       decoration: BoxDecoration(
-                          // color: Colors.blue,
                           image: DecorationImage(
                               image: AssetImage('assets/trophy.png'))),
                     ),
@@ -61,7 +60,7 @@ class _FirstPageState extends State<FirstPage> {
                         ElevatedButton(
                           style: buttonStart,
                           onPressed: () {
-                            userStart(usernameController.text, context);
+                            next.userLogin(usernameController.text, context);
                           },
                           child: Text('Start'),
                         ),

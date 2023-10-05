@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:ujian_app/models/get-data.dart';
 import 'package:ujian_app/pages/profile.dart';
-import 'package:ujian_app/pages/tes_page.dart';
+import 'package:ujian_app/pages/questions.dart';
 import 'package:ujian_app/style/card.dart';
 
-class Home extends StatelessWidget {
+class Dashboard extends StatelessWidget {
   final username;
-  const Home({super.key, required this.username});
-  
-    
+  const Dashboard({super.key, required this.username});
 
   @override
   Widget build(BuildContext context) {
@@ -169,8 +169,7 @@ class Home extends StatelessWidget {
                       children: [
                         Column(
                           children: [
-                            CardCategory(nextDestination: ProfilePage(),),
-                            
+                            CardCategory(username: username, nextDestination: 'profile',),
                           ],
                         ),
                         //
@@ -180,7 +179,7 @@ class Home extends StatelessWidget {
                               width: 0,
                               height: 50,
                             ),
-                            CardCategory(nextDestination: Start(soalModel: soalModel, username: username),),
+                            // CardCategory(username: username, nextDestination: Questions(soalModel: soalModel, username: username)),
                             
                           ],
                         ),

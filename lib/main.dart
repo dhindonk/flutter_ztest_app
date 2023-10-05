@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ujian_app/pages/first_page.dart';
-import 'package:ujian_app/pages/home.dart';
-import 'package:ujian_app/pages/home_page.dart';
+import 'package:ujian_app/pages/login.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:ujian_app/pages/leaderboard.dart';
 
 void main() async{
   await dotenv.load();
@@ -19,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'ZTest',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.indigo),
-      home: FirstPage(),
+      home: LoginPage(),
     );
   }
 }
