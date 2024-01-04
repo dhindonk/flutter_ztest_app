@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ujian_app/pages/login.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:z_test/presentation/root/root.dart';
 
-void main() async{
+void main() async {
   await dotenv.load();
-  runApp(const MyApp());  
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ZTest',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.indigo),
-      home: LoginPage(),
-    );
-  }
+  runApp(const MyApp());
 }
